@@ -67,4 +67,4 @@ Davide Ladisa (<info@davideladisa.it>)
 
 ---
 
-For more information, visit the [repository](https://github.com/FrancoStino/pollinations_mpc).
+For more information, visit the [repository](https://github.com/FrancoStino/pollinations-mpc).
