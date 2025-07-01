@@ -1,11 +1,11 @@
 [package]
-name = "pollinations_mcp"
+name = "pollinations-mcp"
 version = "0.0.1"
 edition = "2021"
 publish = false
 
 [lib]
-path = "src/pollinations_mcp.rs"
+path = "src/pollinations-mcp.rs"
 crate-type = ["cdylib"]
 
 [dependencies]

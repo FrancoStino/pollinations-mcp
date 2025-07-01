@@ -24,22 +24,22 @@ The MCP server provides the following tools:
 
 ### Content Generation
 
-- **generateImageUrl**  
+- **generateImageUrl**
   Generates an image URL from a text prompt.
 
-- **generateImage**  
+- **generateImage**
   Generates an image and returns it as base64-encoded data.
 
-- **respondAudio**  
+- **respondAudio**
   Generates an audio response to a text prompt.
 
-- **sayText**  
+- **sayText**
   Generates speech that says the provided text verbatim.
 
-- **generateText**  
+- **generateText**
   Generates text from a prompt using text models.
 
-- **listModels**  
+- **listModels**
   Lists available models for image or text generation.
 
 ## Usage
@@ -53,7 +53,7 @@ No manual configuration is required. The extension is designed to be plug-and-pl
 
 ## Project Structure
 
-- `src/pollinations_mcp.rs` — Main Rust source file implementing the extension logic.
+- `src/pollinations-mcp.rs` — Main Rust source file implementing the extension logic.
 - `Cargo.toml` — Rust project manifest and dependencies.
 - `extension.toml` — Zed extension manifest and metadata.
 - `.gitignore` — Standard ignore file for build artifacts.
