@@ -61,6 +61,41 @@ No manual configuration is required. The extension is designed to be plug-and-pl
 - `target/` — Build output directory (generated).
 
 
+## Version Management
+
+The project includes a script to manually update versions across all relevant files:
+
+### Updating Versions
+
+Use the `update-version.sh` script to update the project version:
+
+```bash
+./update-version.sh <new_version>
+```
+
+**Example:**
+```bash
+./update-version.sh 0.0.2
+```
+
+**What the script does:**
+1. Updates the version in `Cargo.toml`
+2. Updates the version in `extension.toml`
+3. Creates a commit with the version change
+4. Creates a git tag (e.g., `v0.0.2`)
+5. Optionally pushes to GitHub to trigger the release workflow
+
+**Prerequisites:**
+- Git must be configured with your name and email
+- You should be on the main branch with no uncommitted changes
+- The version must be in format `x.x.x` (e.g., `0.0.2`)
+
+**Release Process:**
+1. Run the version update script
+2. The script will push the tag to GitHub
+3. GitHub Actions will automatically trigger the release workflow
+4. The Zed extension will be published to the extensions repository
+
 ## Author
 
 Davide Ladisa (<info@davideladisa.it>)
