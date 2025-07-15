@@ -51,16 +51,6 @@ Once installed and enabled in Zed:
 
 No manual configuration is required. The extension is designed to be plug-and-play.
 
-## Project Structure
-
-- `src/pollinations-mcp.rs` — Main Rust source file implementing the extension logic.
-- `Cargo.toml` — Rust project manifest and dependencies.
-- `extension.toml` — Zed extension manifest and metadata.
-- `.gitignore` — Standard ignore file for build artifacts.
-- `extension.wasm` — Compiled WebAssembly binary for Zed (generated).
-- `target/` — Build output directory (generated).
-
-
 ## Version Management
 
 The project includes a script to manually update versions across all relevant files:
@@ -102,10 +92,12 @@ Use the `update-version.sh` script to update the project version:
 3. GitHub Actions will automatically trigger the release workflow
 4. The Zed extension will be published to the extensions repository
 
+=======
+
 ## Author
 
 Davide Ladisa (<info@davideladisa.it>)
 
 ---
 
-For more information, visit the [repository](https://github.com/FrancoStino/pollinations_mpc).
+For more information, visit the [repository](https://github.com/FrancoStino/pollinations-mpc).
