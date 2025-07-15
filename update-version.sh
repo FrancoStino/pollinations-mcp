@@ -2,7 +2,7 @@
 
 # Script per aggiornare la versione del progetto Pollinations MCP
 # Uso: ./update-version.sh <versione_o_tipo>
-# Esempi: 
+# Esempi:
 #   ./update-version.sh 0.0.2        # Versione specifica
 #   ./update-version.sh patch         # Incrementa patch (0.0.1 -> 0.0.2)
 #   ./update-version.sh minor         # Incrementa minor (0.0.1 -> 0.1.0)
@@ -33,12 +33,12 @@ get_current_version() {
 increment_version() {
     local current_version=$1
     local increment_type=$2
-    
+
     # Estrai le componenti della versione
     local major=$(echo "$current_version" | cut -d. -f1)
     local minor=$(echo "$current_version" | cut -d. -f2)
     local patch=$(echo "$current_version" | cut -d. -f3)
-    
+
     case $increment_type in
         "patch")
             patch=$((patch + 1))
@@ -57,7 +57,7 @@ increment_version() {
             exit 1
             ;;
     esac
-    
+
     echo "$major.$minor.$patch"
 }
 
@@ -158,7 +158,7 @@ if [ "$push_response" = "y" ]; then
     echo ""
     echo "✅ Push completato!"
     echo "Il workflow di release dovrebbe attivarsi automaticamente."
-    echo "Controlla su GitHub Actions: https://github.com/FrancoStino/pollinations_mpc/actions"
+    echo "Controlla su GitHub Actions: https://github.com/FrancoStino/pollinations_mcp/actions"
 else
     echo ""
     echo "📝 Commit e tag creati localmente ma non ancora pushati."
