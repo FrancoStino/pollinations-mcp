@@ -152,7 +152,7 @@ if [ "$push_response" = "y" ]; then
     echo ""
     echo "✅ Push completato!"
     echo "Il workflow di build dovrebbe attivarsi automaticamente e creare il tag v$NEW_VERSION."
-    echo "Controlla su GitHub Actions: https://github.com/FrancoStino/pollinations_mpc/actions"
+    echo "Controlla su GitHub Actions: https://github.com/FrancoStino/pollinations-mcp/actions"
 else
     echo ""
     echo "📝 Commit creato localmente ma non ancora pushato."
