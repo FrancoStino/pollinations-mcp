@@ -1,16 +1,17 @@
-name: Relase Zed Extension
+name: Release Zed Extension
 
 on:
-  workflow_run:
-    workflows: ["Rust Build"]
-    types:
-      - completed
+  push:
+    tags:
+      - 'v*'
 
 jobs:
-  homebrew:
+  release:
     name: Release Zed Extension
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        
       - uses: huacnlee/zed-extension-action@v1
         with:
           extension-name: pollinations-mcp

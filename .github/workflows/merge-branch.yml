@@ -2,7 +2,7 @@ name: Sync multiple branches
 
 on:
   workflow_run:
-    workflows: ["Relase Zed Extension"]
+    workflows: ["Release Zed Extension"]
     types:
       - completed
 

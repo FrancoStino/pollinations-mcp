@@ -137,35 +137,29 @@ git add Cargo.toml extension.toml
 # Crea il commit
 git commit -m "Bump version to $NEW_VERSION"
 
-# Crea il tag
-TAG_NAME="v$NEW_VERSION"
-git tag -a "$TAG_NAME" -m "Release $NEW_VERSION"
-
-echo "Commit e tag creati con successo!"
+echo "Commit creato con successo!"
 echo "Commit: $(git log --oneline -1)"
-echo "Tag: $TAG_NAME"
 
 # Chiedi se fare il push
 echo ""
-echo "Vuoi fare il push del commit e del tag su GitHub? (y/n)"
-echo "Questo attiverà il workflow di release automaticamente."
+echo "Vuoi fare il push del commit su GitHub? (y/n)"
+echo "Questo attiverà il workflow di build che creerà automaticamente il tag."
 read -r push_response
 
 if [ "$push_response" = "y" ]; then
-    echo "Pushing commit e tag..."
+    echo "Pushing commit..."
     git push origin main
-    git push origin "$TAG_NAME"
     echo ""
     echo "✅ Push completato!"
-    echo "Il workflow di release dovrebbe attivarsi automaticamente."
-    echo "Controlla su GitHub Actions: https://github.com/FrancoStino/pollinations_mcp/actions"
+    echo "Il workflow di build dovrebbe attivarsi automaticamente e creare il tag v$NEW_VERSION."
+    echo "Controlla su GitHub Actions: https://github.com/FrancoStino/pollinations_mpc/actions"
 else
     echo ""
-    echo "📝 Commit e tag creati localmente ma non ancora pushati."
+    echo "📝 Commit creato localmente ma non ancora pushato."
     echo "Per fare il push manualmente più tardi:"
     echo "git push origin main"
-    echo "git push origin $TAG_NAME"
+    echo "Dopo il push, il workflow creerà automaticamente il tag v$NEW_VERSION."
 fi
 
 echo ""
-echo "✅ Versione aggiornata con successo da $(git describe --tags --abbrev=0 HEAD^) a $TAG_NAME"
+echo "✅ Versione aggiornata con successo a $NEW_VERSION"
