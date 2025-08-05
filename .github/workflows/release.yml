@@ -18,7 +18,9 @@ jobs:
         uses: huacnlee/zed-extension-action@v1
         with:
           extension-name: pollinations-mcp
-          push-to: FrancoStino/zed-extensions@main
+          push-to: FrancoStino/zed-extensions
+          create-pullrequest: true
           commit-message: Update {{extensionName}} to v{{version}}
+          tag-name: v${{ steps.version.outputs.new_version }}
         env:
           COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
