@@ -1,21 +1,22 @@
-# name: Relase Zed Extension
+name: Release Zed Extension
 
-# on:
-#   workflow_run:
-#     workflows: ["Rust Build"]
-#     types:
-#       - completed
+on:
+  push:
+    tags:
+      - 'v*'
 
-# jobs:
-#   homebrew:
-#     name: Release Zed Extension
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: huacnlee/zed-extension-action@v1
-#         with:
-#           extension-name: pollinations-mcp
-#           # extension-path: extensions/pollinations-mcp
-#           push-to: FrancoStino/extensions
-#         env:
-#           # the personal access token should have "repo" & "workflow" scopes
-#           COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
+jobs:
+  release:
+    name: Release Zed Extension
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        
+      - uses: huacnlee/zed-extension-action@v1
+        with:
+          extension-name: pollinations-mcp
+          # extension-path: extensions/pollinations-mcp
+          push-to: FrancoStino/extensions
+        env:
+          # the personal access token should have "repo" & "workflow" scopes
+          COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
