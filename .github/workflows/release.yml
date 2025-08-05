@@ -1,9 +1,10 @@
 name: Release Zed Extension
 
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_run:
+    workflows: ["Create Tag"]
+    types:
+      - completed
 
 jobs:
   release:
@@ -11,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        
+
       - uses: huacnlee/zed-extension-action@v1
         with:
           extension-name: pollinations-mcp
