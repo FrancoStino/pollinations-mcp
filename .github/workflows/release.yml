@@ -53,6 +53,10 @@ jobs:
         run: |
           sed -i "s/^version = .*/version = \"${{ steps.version.outputs.new_version }}\"/" extension.toml
 
+      - name: Update Cargo.toml version
+        run: |
+          sed -i "s/^version = .*/version = \"${{ steps.version.outputs.new_version }}\"/" Cargo.toml
+
       - name: Setup Git state
         run: |
           git fetch --all
@@ -64,7 +68,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add extension.toml
+          git add extension.toml Cargo.toml
           git commit -m "chore: prepare release ${{ steps.version.outputs.new_version }}"
 
       - name: Push changes
