@@ -3,21 +3,22 @@ name: Release Zed Extension
 on:
   workflow_run:
     workflows: ["Create Tag"]
-    types:
-      - completed
+    types: [completed]
 
 jobs:
   release:
-    name: Release Zed Extension
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
 
-      - uses: huacnlee/zed-extension-action@v1
+      - name: Run Zed Extension Action
+        uses: huacnlee/zed-extension-action@v1
         with:
           extension-name: pollinations-mcp
-          # extension-path: extensions/pollinations-mcp
-          push-to: FrancoStino/zed-extensions
+          push-to: FrancoStino/zed-extensions@main
+          commit-message: Update {{extensionName}} to v{{version}}
         env:
-          # the personal access token should have "repo" & "workflow" scopes
           COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
