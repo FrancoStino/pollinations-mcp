@@ -51,29 +51,6 @@ Once installed and enabled in Zed:
 
 No manual configuration is required. The extension is designed to be plug-and-play.
 
-## Version Management
-
-The project includes a script to manually update versions across all relevant files:
-
-### Updating Versions
-
-Use the `update-version.sh` script to update the project version:
-
-```bash
-./update-version.sh <version_or_type>
-```
-
-**Examples:**
-```bash
-# Specific version
-./update-version.sh 0.0.2
-
-# Semantic version increments
-./update-version.sh patch    # 0.0.1 → 0.0.2
-./update-version.sh minor    # 0.0.1 → 0.1.0
-./update-version.sh major    # 0.0.1 → 1.0.0
-```
-
 ---
 
 ## Author
