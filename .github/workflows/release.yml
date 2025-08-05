@@ -60,6 +60,13 @@ jobs:
           git pull origin main
           git branch -u origin/main main
 
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add extension.toml
+          git commit -m "chore: prepare release ${{ steps.version.outputs.new_version }}"
+
       - name: Push changes
         run: |
           git tag v${{ steps.version.outputs.new_version }}
