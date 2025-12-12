@@ -5,7 +5,6 @@
 
 version: 2
 updates:
-  # Maintain dependencies for Cargo (Rust)
   - package-ecosystem: "cargo"
     directory: "/"
     schedule:
@@ -14,7 +13,6 @@ updates:
       - "dependencies"
       - "rust"
 
-  # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
