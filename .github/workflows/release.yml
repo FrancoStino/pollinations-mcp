@@ -3,6 +3,9 @@ on:
     tags:
       - "v*"
 
+permissions:
+  contents: read
+
 jobs:
   homebrew:
     name: Release Zed Extension
