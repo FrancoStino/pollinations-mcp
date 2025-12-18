@@ -1,4 +1,6 @@
 name: Rust Build
+permissions:
+  contents: read
 
 on:
   push:
