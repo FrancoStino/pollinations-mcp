@@ -1,6 +1,6 @@
 id = "pollinations-mcp"
 name = "Pollinations MCP"
-version = "1.0.8"
+version = "1.0.9"
 schema_version = 1
 authors = ["Davide Ladisa <info@davideladisa.it>"]
 description = "Pollinations MCP is an extension for integrating Pollinations AI into Zed."
