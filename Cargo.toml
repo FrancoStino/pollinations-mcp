@@ -1,7 +1,7 @@
 [package]
 name = "pollinations-mcp"
-version = "1.0.10"
-edition = "2021"
+version = "1.0.12"
+edition = "2026"
 publish = false
 
 [lib]
