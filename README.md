@@ -1,20 +1,23 @@
 # Pollinations Multimodal MCP Server
 
-Pollinations MCP is a Model Context Protocol (MCP) server for the [Pollinations AI APIs](https://pollinations.ai) that enables AI assistants and tools (such as Zed or Claude) to generate images, text, and audio directly. This server follows the "thin proxy" design principle, focusing on minimal data transformation and direct communication through stdio.
+Pollinations MCP is a Model Context Protocol (MCP) server for the [Pollinations AI APIs](https://pollinations.ai) that enables AI assistants and tools (such as Zed or Claude) to generate images, text, audio, video, 3D models, and embeddings directly. This server follows the "thin proxy" design principle, focusing on minimal data transformation and direct communication through stdio.
 
-This extension integrates the MCP server into the [Zed](https://zed.dev) code editor, providing seamless access to Pollinations AI features directly within your development environment.
+This extension integrates the `@pollinations/mcp` package into the [Zed](https://zed.dev) code editor, providing seamless access to Pollinations AI features directly within your development environment.
 
 ## Features
 
-- Generate image URLs from text prompts
-- Generate actual images and return them as base64-encoded data
-- Generate text responses from text prompts
-- Generate audio (text-to-speech) from text prompts
-- List available image and text generation models
+- Generate and edit images
+- Generate text responses, search-capable models, and multimodal input handling
+- Generate audio (speech, music, or sound) and transcribe audio
+- Generate video content
+- Generate GLB 3D models
+- Create text and multimodal embeddings
+- List live models, aliases, capabilities, voices, endpoints, and pricing
+- Inspect model status (recent requests, errors, latency) and check Pollen balance
 - STDIO transport for easy integration with MCP clients
 - Simple and lightweight
 - Compatible with the Model Context Protocol (MCP)
-- **Context Server Integration:** Registers a context server in Zed that communicates with Pollinations MCP via a Node.js process.
+- **Context Server Integration:** Registers a context server in Zed that communicates with `@pollinations/mcp` via a Node.js process.
 - **Zero Configuration:** Works out-of-the-box with Zed, requiring minimal setup.
 
 
@@ -22,25 +25,35 @@ This extension integrates the MCP server into the [Zed](https://zed.dev) code ed
 
 The MCP server provides the following tools:
 
-### Content Generation
+- **listModels**
+  List live models, aliases, capabilities, voices, endpoints, and pricing.
 
-- **generateImageUrl**
-  Generates an image URL from a text prompt.
-
-- **generateImage**
-  Generates an image and returns it as base64-encoded data.
-
-- **respondAudio**
-  Generates an audio response to a text prompt.
-
-- **sayText**
-  Generates speech that says the provided text verbatim.
+- **getModelStatus**
+  Inspect recent requests, errors, and latency for a model.
 
 - **generateText**
-  Generates text from a prompt using text models.
+  Generate text, use search-capable models, process multimodal input, or call a listed agent.
 
-- **listModels**
-  Lists available models for image or text generation.
+- **generateImage**
+  Generate or edit images.
+
+- **generateVideo**
+  Generate video.
+
+- **generateAudio**
+  Generate speech, music, or sound.
+
+- **transcribeAudio**
+  Transcribe audio from a public HTTPS URL.
+
+- **generate3D**
+  Generate a GLB 3D model.
+
+- **createEmbeddings**
+  Create text or multimodal embeddings.
+
+- **getBalance**
+  Check remaining Pollen balance.
 
 ## Usage
 
