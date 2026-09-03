@@ -18,4 +18,4 @@ jobs:
           push-to: FrancoStino/zed-extensions
         env:
           # the personal access token should have "repo" & "workflow" scopes
-          COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
+          WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
