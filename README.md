@@ -26,34 +26,37 @@ This extension integrates the `@pollinations/mcp` package into the [Zed](https:/
 The MCP server provides the following tools:
 
 - **listModels**
-  List live models, aliases, capabilities, voices, endpoints, and pricing.
+  List live canonical names, aliases, modalities, capabilities, voices, supported endpoints, agent status, and pricing.
 
 - **getModelStatus**
-  Inspect recent requests, errors, and latency for a model.
+  Return recent per-model request counts, errors, and latency.
 
 - **generateText**
-  Generate text, use search-capable models, process multimodal input, or call a listed agent.
+  Run completions through text models or agents. Supports search, multimodal input, tool calling, structured output, reasoning, and audio output.
 
 - **generateImage**
-  Generate or edit images.
+  Generate or edit images and return an unlisted `media.pollinations.ai` resource link.
 
 - **generateVideo**
-  Generate video.
+  Generate video content and return an unlisted `media.pollinations.ai` resource link.
 
 - **generateAudio**
-  Generate speech, music, or sound.
+  Generate speech, music, or sound and return an unlisted `media.pollinations.ai` resource link.
 
 - **transcribeAudio**
-  Transcribe audio from a public HTTPS URL.
+  Transcribe spoken audio from a public HTTPS URL.
 
 - **generate3D**
-  Generate a GLB 3D model.
+  Generate a GLB 3D model and return an unlisted `media.pollinations.ai` resource link.
 
 - **createEmbeddings**
-  Create text or multimodal embeddings.
+  Create OpenAI-compatible text or multimodal embeddings.
 
 - **getBalance**
-  Check remaining Pollen balance.
+  Get current Pollen balance for the authenticated API key.
+
+- **setApiKey**, **getKeyInfo**, **clearApiKey**
+  Manage API key authentication state for pollinations.ai requests.
 
 ## Usage
 
