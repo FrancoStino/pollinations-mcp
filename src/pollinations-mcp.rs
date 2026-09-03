@@ -1,8 +1,8 @@
 use std::env;
 use zed_extension_api::{self as zed, Command, ContextServerId, Project, Result};
 
-const PACKAGE_NAME: &str = "@pollinations/model-context-protocol";
-const SERVER_PATH: &str = "node_modules/@pollinations/model-context-protocol/pollinations-mcp.js";
+const PACKAGE_NAME: &str = "@pollinations/mcp";
+const SERVER_PATH: &str = "node_modules/@pollinations/mcp/pollinations-mcp.js";
 
 struct PollinationsModelContextExtension;
 
